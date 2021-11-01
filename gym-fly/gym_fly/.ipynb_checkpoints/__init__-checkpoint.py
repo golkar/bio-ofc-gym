@@ -1,0 +1,30 @@
+from gym.envs.registration import register
+
+register(
+    id='fly-v0',
+    entry_point='gym_fly.envs:FlyEnv',
+)
+register(
+    id='fly-continuous-v0',
+    entry_point='gym_fly.envs:FlyEnvContinuous',
+)
+register(
+    id='fly-delayed-v0',
+    entry_point='gym_fly.envs:FlyDelayedEnv',
+)
+register(
+    id='fly-delayed-continuous-v0',
+    entry_point='gym_fly.envs:FlyDelayedEnvContinuous',
+)
+register(
+    id='fly-lin-v0',
+    entry_point='gym_fly.envs:FlyLinEnv',
+)
+register(
+    id='fly-lin-continuous-v0',
+    entry_point='gym_fly.envs:FlyLinEnvContinuous',
+)
+register(
+    id='fly-lin-delayed-v1',
+    entry_point='gym_fly.envs:FlyLinDelayedEnv',
+)

@@ -1,0 +1,26 @@
+% create environment
+conda create -n kalman python=3.6 mpi4py
+
+% cloning spinning up (not necessary if folder already present)
+git clone https://github.com/openai/spinningup.git
+
+% installing spinning up (this installs gym requirements)
+cd spinningup
+pip install -e .
+
+% install gym-fly
+cd gym-fly
+pip install -e .
+
+
+% check installation
+python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
+% run these in the spinning up folder
+python -m spinup.run test_policy data/installtest/installtest_s0
+python -m spinup.run plot data/installtest/installtest_s0
+
+% for recording videos
+conda install ffmpeg
+
+% install jupyter lab (optional)
+conda install jupyterlab
